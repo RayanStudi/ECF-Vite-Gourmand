@@ -59,18 +59,6 @@ Application web pour un traiteur de Bordeaux permettant de présenter ses menus,
 
 ---
 
-## Déploiement (GitHub Pages)
-
-Le site étant statique, il peut être déployé gratuitement via **GitHub Pages** :
-
-1. Pousser le code sur un dépôt GitHub **public**
-2. Aller dans **Settings** → **Pages**
-3. Dans **Source**, choisir la branche `main`
-4. Cliquer sur **Save**
-5. Le site sera accessible à l'adresse : ``
-
----
-
 ## Charte graphique
 
 | Élément | Valeur |
