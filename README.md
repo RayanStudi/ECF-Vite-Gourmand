@@ -51,7 +51,7 @@ Application web pour un traiteur de Bordeaux permettant de présenter ses menus,
 
 1. Cloner le dépôt
    ```bash
-   
+   gh repo clone RayanStudi/ECF-Vite-Gourmand
    ```
 
 2. Ouvrir le fichier `index.html` directement dans un navigateur
