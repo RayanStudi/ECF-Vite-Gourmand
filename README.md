@@ -52,7 +52,7 @@ vite-et-gourmand/
 
 1. Cloner le dépôt
    ```bash
-   git clone https://github.com/VOTRE-COMPTE/vite-et-gourmand.git
+   
    ```
 
 2. Ouvrir le fichier `index.html` directement dans un navigateur
@@ -68,7 +68,7 @@ Le site étant statique, il peut être déployé gratuitement via **GitHub Pages
 2. Aller dans **Settings** → **Pages**
 3. Dans **Source**, choisir la branche `main` et le dossier `/ (root)`
 4. Cliquer sur **Save**
-5. Le site sera accessible à l'adresse : `https://VOTRE-COMPTE.github.io/vite-et-gourmand/`
+5. Le site sera accessible à l'adresse : ``
 
 ---
 
