@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite & Gourmand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!--  navbar -->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-vg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand icone" href="">Vite & Gourmand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalogue.html">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+                </ul>
+                <a href="auth.html" class="btn btn-connexion-vg">Connexion</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <!-- Section principale -->
+    <section class="hero-vg" id="accueil">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-6 hero-vg__texte">
+                    <h1>Vite & Gourmand</h1>
+                    <p class="hero-vg__sous-titre">
+                        Traiteur de qualité à Bordeaux depuis 25 ans.
+                        Des menus savoureux pour tous vos événements.
+                    </p>
+                    <a href="catalogue.html" class="btn btn-hero-vg">
+                        Voir nos menus
+                    </a>
+                </div>
+                <div class="col-md-6 hero-vg__visuel">
+                    <div class="hero-vg__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section présentation de l'entreprise -->
+    <section class="presentation-vg" id="presentation">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+                    <img src="images/pexels-elletakesphotos-2696064.jpg" alt="Julie et José, l'équipe de Vite & Gourmand"
+                        class="presentation-vg__photo">
+                </div>
+
+                <div class="col-md-6 presentation-vg__texte">
+                    <h2>Notre histoire</h2>
+                    <p>
+                        Depuis 25 ans, <strong>Vite & Gourmand</strong> régale les Bordelais
+                        avec une cuisine authentique et raffinée. Julie et José mettent leur
+                        passion au service de tous vos événements.
+                    </p>
+                    <p>
+                        De la simple réception au repas de fête, nous proposons des menus
+                        en constante évolution, élaborés avec des produits de qualité.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Section nos engagements -->
+    <section class="engagements-vg" id="engagements">
+        <div class="container">
+            <h2 class="text-center">Nos engagements</h2>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="engagements-vg__carte">
+                        <i class="bi bi-award engagements-vg__icone"></i>
+                        <h3>Qualité & Fraîcheur</h3>
+                        <p>Des produits locaux et de saison, sélectionnés avec soin pour des plats savoureux.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="engagements-vg__carte">
+                        <i class="bi bi-clock-history engagements-vg__icone"></i>
+                        <h3>25 ans d'expérience</h3>
+                        <p>Un savoir-faire reconnu depuis 25 ans au service de vos événements à Bordeaux.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="engagements-vg__carte">
+                        <i class="bi bi-heart engagements-vg__icone"></i>
+                        <h3>Service personnalisé</h3>
+                        <p>Chaque menu est adapté à vos besoins, du simple repas à la grande réception.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Section avis clients -->
+    <section class="avis-vg" id="avis">
+        <div class="container">
+            <h2 class="text-center">Ce que disent nos clients</h2>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <article class="avis-vg__carte">
+                        <div class="avis-vg__entete">
+                            <div class="avis-vg__avatar">M</div>
+                            <div>
+                                <p class="avis-vg__nom">Marie L.</p>
+                                <p class="avis-vg__date">Mars 2026</p>
+                            </div>
+                        </div>
+                        <div class="avis-vg__etoiles">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="avis-vg__commentaire">
+                            Un menu de Noël exceptionnel ! Tout était délicieux et le service impeccable.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="avis-vg__carte">
+                        <div class="avis-vg__entete">
+                            <div class="avis-vg__avatar">T</div>
+                            <div>
+                                <p class="avis-vg__nom">Thomas D.</p>
+                                <p class="avis-vg__date">Février 2026</p>
+                            </div>
+                        </div>
+                        <div class="avis-vg__etoiles">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="avis-vg__commentaire">
+                            Parfait pour notre événement d'entreprise. Je recommande vivement Vite & Gourmand.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="avis-vg__carte">
+                        <div class="avis-vg__entete">
+                            <div class="avis-vg__avatar">S</div>
+                            <div>
+                                <p class="avis-vg__nom">Sophie R.</p>
+                                <p class="avis-vg__date">Janvier 2026</p>
+                            </div>
+                        </div>
+                        <div class="avis-vg__etoiles">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="avis-vg__commentaire">
+                            Très bon menu de Pâques, des saveurs au top. Une petite attente à la livraison.
+                        </p>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer-vg">
+    <div class="container">
+        <div class="row">
+
+            <!-- Horaires -->
+            <div class="col-md-4 footer-vg__colonne">
+                <h3>Horaires</h3>
+                <ul class="footer-vg__horaires">
+                    <li><span>Lundi - Vendredi</span> <span>9h - 19h</span></li>
+                    <li><span>Samedi</span> <span>9h - 20h</span></li>
+                    <li><span>Dimanche</span> <span>10h - 18h</span></li>
+                </ul>
+            </div>
+
+            <!--  Contact -->
+            <div class="col-md-4 footer-vg__colonne">
+                <h3>Contact</h3>
+                <p><i class="bi bi-geo-alt"></i> Bordeaux, France</p>
+                <p><i class="bi bi-telephone"></i> <a href="tel:+33500000000">05 00 00 00 00</a></p>
+                <p><i class="bi bi-envelope"></i> <a href="mailto:contact@vite-gourmand.fr">contact@vite-gourmand.fr</a></p>
+            </div>
+
+            <!--  Réseaux sociaux -->
+            <div class="col-md-4 footer-vg__colonne">
+                <h3>Suivez-nous</h3>
+                <div class="footer-vg__reseaux">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- copyright + liens légaux -->
+        <div class="footer-vg__bas">
+            <p>&copy; 2026 Vite & Gourmand. Tous droits réservés.</p>
+            <nav class="footer-vg__legal" aria-label="Liens légaux">
+                <a href="index.php?page=home&action=mentions">Mentions légales</a>
+                <a href="index.php?page=home&action=cgv">CGV</a>
+            </nav>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>

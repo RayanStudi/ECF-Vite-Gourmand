@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos menus - Vite & Gourmand</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="catalogue.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-vg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Vite & Gourmand</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="catalogue.html">Menus</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+                    </ul>
+                    <a href="auth.html" class="btn btn-connexion-vg">Connexion</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="catalogue-vg">
+
+        <div class="catalogue-vg__bandeau">
+            <div class="container">
+                <h1>Tous nos menus</h1>
+                <p>Découvrez l'ensemble de nos propositions pour vos événements</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <aside class="col-lg-3">
+                    <div class="catalogue-vg__filtres">
+                        <h2 class="catalogue-vg__filtres-titre">Filtres</h2>
+
+                        <form id="form-filtres">
+
+                            <div class="catalogue-vg__groupe">
+                                <label class="catalogue-vg__label">Fourchette de prix (€)</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="prix-min" name="prix_min" placeholder="Min" min="0">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="prix-max" name="prix_max" placeholder="Max" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="catalogue-vg__groupe">
+                                <label class="catalogue-vg__label">Thème</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="theme-noel" name="theme[]" value="noel">
+                                    <label class="form-check-label" for="theme-noel">Noël</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="theme-paques" name="theme[]" value="paques">
+                                    <label class="form-check-label" for="theme-paques">Pâques</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="theme-classique" name="theme[]" value="classique">
+                                    <label class="form-check-label" for="theme-classique">Classique</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="theme-evenement" name="theme[]" value="evenement">
+                                    <label class="form-check-label" for="theme-evenement">Événement</label>
+                                </div>
+                            </div>
+
+                            <div class="catalogue-vg__groupe">
+                                <label class="catalogue-vg__label">Régime</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="regime-vegetarien" name="regime[]" value="vegetarien">
+                                    <label class="form-check-label" for="regime-vegetarien">Végétarien</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="regime-vegan" name="regime[]" value="vegan">
+                                    <label class="form-check-label" for="regime-vegan">Vegan</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="regime-classique" name="regime[]" value="classique">
+                                    <label class="form-check-label" for="regime-classique">Classique</label>
+                                </div>
+                            </div>
+
+                            <div class="catalogue-vg__groupe">
+                                <label class="catalogue-vg__label" for="nb-personnes">Nb personnes min.</label>
+                                <input type="number" class="form-control" id="nb-personnes" name="nb_personnes" placeholder="Nombre" min="1">
+                            </div>
+
+                            <button type="submit" class="btn btn-filtre-vg w-100">Appliquer les filtres</button>
+                            <button type="reset" class="btn btn-reset-vg w-100">Réinitialiser</button>
+
+                        </form>
+                    </div>
+                </aside>
+
+                <div class="col-lg-9">
+                    <div class="catalogue-vg__entete">
+                        <h2 class="catalogue-vg__resultats">6 menus disponibles</h2>
+                        <select class="form-select catalogue-vg__tri" aria-label="Trier les menus">
+                            <option selected>Trier par...</option>
+                            <option value="prix-asc">Prix croissant</option>
+                            <option value="prix-desc">Prix décroissant</option>
+                            <option value="nom">Nom (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="row" id="liste-menus">
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-noel.jpg" alt="Menu de Noël traditionnel">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Noël</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Classique</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu de Noël traditionnel</h3>
+                                    <p class="menu-vg__desc">Un repas festif aux saveurs traditionnelles pour célébrer les fêtes.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 8 pers. min.</span>
+                                        <span class="menu-vg__prix">45 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-paques.jpg" alt="Menu de Pâques printanier">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Pâques</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Classique</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu de Pâques printanier</h3>
+                                    <p class="menu-vg__desc">Agneau, légumes de saison et douceurs chocolatées artisanales.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 6 pers. min.</span>
+                                        <span class="menu-vg__prix">42 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-vegan.jpg" alt="Menu vegan gourmand">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Classique</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Vegan</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu vegan gourmand</h3>
+                                    <p class="menu-vg__desc">Une cuisine végétale créative et savoureuse, 100% sans produits animaux.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 4 pers. min.</span>
+                                        <span class="menu-vg__prix">38 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-mariage.jpg" alt="Menu mariage prestige">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Événement</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Classique</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu mariage prestige</h3>
+                                    <p class="menu-vg__desc">Un menu raffiné en plusieurs services pour sublimer votre grand jour.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 20 pers. min.</span>
+                                        <span class="menu-vg__prix">75 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-vegetarien.jpg" alt="Menu végétarien de saison">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Classique</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Végétarien</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu végétarien de saison</h3>
+                                    <p class="menu-vg__desc">Des plats végétariens élaborés avec les meilleurs produits du marché.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 5 pers. min.</span>
+                                        <span class="menu-vg__prix">40 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <article class="menu-vg__carte">
+                                <div class="menu-vg__image">
+                                    <img src="images/menu-anniversaire.jpg" alt="Menu anniversaire festif">
+                                </div>
+                                <div class="menu-vg__corps">
+                                    <div class="menu-vg__badges">
+                                        <span class="menu-vg__badge menu-vg__badge--theme">Événement</span>
+                                        <span class="menu-vg__badge menu-vg__badge--regime">Classique</span>
+                                    </div>
+                                    <h3 class="menu-vg__titre">Menu anniversaire festif</h3>
+                                    <p class="menu-vg__desc">Un menu convivial et gourmand pour fêter vos anniversaires entre proches.</p>
+                                    <div class="menu-vg__infos">
+                                        <span><i class="bi bi-people"></i> 10 pers. min.</span>
+                                        <span class="menu-vg__prix">48 €</span>
+                                    </div>
+                                    <a href="detail-menu.html" class="btn btn-detail-vg w-100">Voir le détail</a>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-vg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-vg__colonne mb-4">
+                    <h3>Horaires</h3>
+                    <ul class="footer-vg__horaires">
+                        <li><span>Lundi - Vendredi</span> <span>9h - 19h</span></li>
+                        <li><span>Samedi</span> <span>9h - 20h</span></li>
+                        <li><span>Dimanche</span> <span>10h - 18h</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-vg__colonne mb-4">
+                    <h3>Contact</h3>
+                    <p><i class="bi bi-geo-alt"></i> Bordeaux, France</p>
+                    <p><i class="bi bi-telephone"></i> <a href="tel:+33500000000">05 00 00 00 00</a></p>
+                    <p><i class="bi bi-envelope"></i> <a href="mailto:contact@vite-gourmand.fr">contact@vite-gourmand.fr</a></p>
+                </div>
+                <div class="col-md-4 footer-vg__colonne mb-4">
+                    <h3>Suivez-nous</h3>
+                    <div class="footer-vg__reseaux">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-vg__bas">
+                <p>&copy; 2026 Vite & Gourmand. Tous droits réservés.</p>
+                <nav class="footer-vg__legal" aria-label="Liens légaux">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">CGV</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
